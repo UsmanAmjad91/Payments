@@ -109,7 +109,7 @@
                     <div id="flutterwave" class="tab-pane fade show pt-3">
 
                         <h2 class="mt-3" >Pay With Flutter wave</h2>
-                        <form name="flutter_wave" id="flutter_wave" action="{{ route('flutter_wave') }}"  method="Post" >
+                        <form name="flutter_wave" id="flutter_wave" action="javascript:void(0);"  method="Post" >
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="username">
@@ -273,10 +273,59 @@
             </div>
         </div>
     </div>
-</div>          
+</div> 
+
+{{-- Model Form Flutter Wave --}}
+
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog"  aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" top="20"  role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Flutter Wave Payment Proceed</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+      <h6>Please Click On Button And Proceed To Pay Tab</h6>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <a href=""  class="btn btn-outline-warning" id="link_pay" target='blank' value=''>Confirm Payment</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{--END--}}
+
 @endsection
 
 @section('footer')
-
-
+<script>
+$("#flutter_wave").submit(function(e) {
+    e.preventDefault();
+    var formData = new FormData(this);
+    $.ajax({
+        url: "{{ route('flutter_wave') }}",
+        type: 'post',
+        data: formData,
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        dataType: 'json',
+         contentType: false,
+        processData: false, 
+        success: function(msg) {    
+    $('#modalRegisterForm').modal('show');
+       var text = 'Confirm Payment';
+        $("#link_pay").html(`<a href="${msg}" class="btn btn-outline-warning" target="_blank">${text}</a>`);
+    
+         
+        }
+    });
+});
+</script>
 @endsection

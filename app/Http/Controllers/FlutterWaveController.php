@@ -17,7 +17,7 @@ class FlutterWaveController extends Controller
         // dd($request->all());
         $provider = PaymentGateway::make('flutterwave');
         $paymentSession = $provider->initializePayment([
-                        'currency' => 'NGN', // required
+                        'currency' => env('FLUTTERWAVE_CURRENCY'), // required
                         'amount' => $request->amount, // required
                         'email' => $request->email, // required
                         'meta' => [ 'name' => $request->username, 'phone' => $request->phone],
@@ -41,7 +41,8 @@ class FlutterWaveController extends Controller
         $paymentSession->checkoutUrl;
         $paymentSession->expires;
 
-        dd($paymentSession);
+        // dd($paymentSession->checkoutUrl);
+        return json_encode($paymentSession->checkoutUrl);
     }
 
     
