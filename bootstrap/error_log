@@ -1,0 +1,24 @@
+[11-Mar-2023 10:39:37 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php on line 14
+[11-Mar-2023 10:39:37 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php on line 14
+[11-Mar-2023 10:39:37 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php on line 14
+[11-Mar-2023 10:39:37 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php on line 14
+[11-Mar-2023 10:39:41 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php on line 14
+[11-Mar-2023 10:39:43 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/bootstrap/app.php on line 14

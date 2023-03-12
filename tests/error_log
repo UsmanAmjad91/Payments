@@ -1,0 +1,16 @@
+[11-Mar-2023 10:39:32 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php on line 7
+[11-Mar-2023 10:39:32 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php on line 7
+[11-Mar-2023 10:39:32 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php on line 7
+[11-Mar-2023 10:39:34 America/New_York] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/usstcwaz/gateway.usstateservice.com/tests/TestCase.php on line 7
