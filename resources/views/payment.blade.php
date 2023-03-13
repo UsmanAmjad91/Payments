@@ -105,6 +105,66 @@
                         </form>
                     </div>
                     <!-- End -->
+                    <!-- Apple info-->
+                    <div id="apple" class="tab-pane fade show pt-3">
+
+                        <h2 class="mt-3" >Pay With Flutter wave</h2>
+                        <form name="apple_pay" id="apple_pay" action="{{}}"  method="Post" >
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="username">
+                                    <h6>Name</h6>
+                                </label>
+                                <input type="text" name="username" placeholder="Card Owner Name" required class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    <h6>Email</h6>
+                                </label>
+                                <div class="input-group">
+                                    <input type="email" name="email" placeholder="Email" class="form-control" required />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text text-muted">  <i class="fab fa-cc-amex mx-1"></i> </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    <h6>Phone</h6>
+                                </label>
+                                <div class="input-group">
+                                    <input type="text" name="phone" placeholder="Phone" class="form-control" required />
+                                    <div class="input-group-append">
+                                        <span class="input-group-text text-muted">  <i class="fab fa-cc-amex mx-1"></i> </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>
+                                            <span class="hidden-xs">
+                                                <h6> Product Description</h6>
+                                            </span>
+                                        </label>
+                                        <div class="input-group"><textarea type="text" width="" height="100px" placeholder="productDescription" name="productDescription" class="form-control" required > </textarea></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group mb-4">
+                                        <label data-toggle="tooltip" title="Three digit CV code on the back of your card">
+                                            <h6>Amount <i class="fa fa-question-circle d-inline"></i></h6>
+                                        </label>
+                                        <input type="text" name="amount" required class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="subscribe btn btn-primary btn-block shadow-sm">Confirm Payment</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- End -->
                     <!-- flutterwave info-->
                     <div id="flutterwave" class="tab-pane fade show pt-3">
 
