@@ -92,7 +92,7 @@ input[type="radio"] {
                     <a class="nav-link text-white" href="{{route('email.view')}}">Email</a>
                 </li>
                 <li class="nav-item pr-3">
-                    <a class="nav-link text-white" href="#">Shop New Cars</a>
+                    <a class="nav-link text-white" href="{{route('import.export')}}">Import Export</a>
                 </li>
                 <li class="nav-item pr-3">
                     <a class="nav-link text-white" href="#">Clearence Event</a>

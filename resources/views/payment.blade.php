@@ -27,7 +27,7 @@
                             <a data-toggle="pill" href="#flutterwave" class="nav-link"> <i class="fab fa-buildings"></i>Flutter Wave</a>
                         </li>
                         <li class="nav-item">
-                            <a data-toggle="pill" href="#applepay" class="nav-link"> <i class="fab fa-buildings"></i> Apple Pay </a>
+                            <a data-toggle="pill" href="#apple" class="nav-link"> <i class="fab fa-buildings"></i> Apple Pay </a>
                         </li>
                         <li class="nav-item">
                             <a data-toggle="pill" href="#mollie" class="nav-link"> <i class="fab fa-buildings"></i>Mollie </a>
@@ -108,8 +108,8 @@
                     <!-- Apple info-->
                     <div id="apple" class="tab-pane fade show pt-3">
 
-                        <h2 class="mt-3" >Pay With Flutter wave</h2>
-                        <form name="apple_pay" id="apple_pay" action="{{}}"  method="Post" >
+                        <h2 class="mt-3" >Pay With Apple</h2>
+                        <form name="apple_pay" id="apple_pay" action=""  method="Post" >
                             {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="username">

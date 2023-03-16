@@ -7,6 +7,7 @@ use App\Http\Controllers\JazzCashController;
 use App\Http\Controllers\RazorPayController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\FlutterWaveController;
+use App\Http\Controllers\ImportExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,12 +46,12 @@ Route::get('email/view',[EmailController::class,'index'])->name('email.view');
 Route::post('email/send',[EmailController::class,'email'])->name('email.send');
 Route::get('email/temp',[EmailController::class,'template'])->name('email.temp');
 
+//Import Export data//
 
+Route::get('import_export',[ImportExportController::class,'index'])->name('import.export');
+Route::post('import',[ImportExportController::class,'import'])->name('import');
+Route::get('export',[ImportExportController::class,'export'])->name('export');
 
-
-
-
-
-
+Route::get('pdf',[ImportExportController::class,'pdf'])->name('pdf');
 
 
