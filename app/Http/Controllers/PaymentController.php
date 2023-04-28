@@ -14,17 +14,23 @@ use App\Models\Payment;
 
 class PaymentController extends Controller
 {
-    
+
     private $gateway;
-   
+
     public function __construct()
     {
+
         $this->gateway = Omnipay::create('PayPal_Rest');
         $this->gateway->setClientId(env('PAYPAL_CLIENT_ID'));
         $this->gateway->setSecret(env('PAYPAL_CLIENT_SECRET'));
         $this->gateway->setTestMode(true); //set it to 'false' when go live
+        // set permission
+        // $this->middleware('permission:charge|payment|success|error', ['only' => ['index','show','view','list']]);
+        // $this->middleware('permission:charge', ['only' => ['create','store']]);
+        // $this->middleware('permission:payment', ['only' => ['edit','update']]);
+        // $this->middleware('permission:success', ['only' => ['destroy','delete']]);
     }
-   
+
     /**
      * Call a view.
      */
@@ -32,7 +38,7 @@ class PaymentController extends Controller
     {
         return view('payment');
     }
-   
+
     /**
      * Initiate a payment on PayPal.
      *
@@ -42,9 +48,9 @@ class PaymentController extends Controller
     {
         if($request->input('_token'))
         {
-           
+
             try {
-                
+
                 $response = $this->gateway->purchase(array(
                     'amount' => $request->input('amount'),
                     'currency' => env('PAYPAL_CURRENCY'),
@@ -53,7 +59,7 @@ class PaymentController extends Controller
                 ));
                 $response = $response->send();
                 if ($response->redirect()) {
-                    $response->redirect(); 
+                    $response->redirect();
                 } else {
                     return $response->getMessage();
                 }
@@ -62,7 +68,7 @@ class PaymentController extends Controller
             }
         }
     }
-   
+
     /**
      * Charge a payment and store the transaction.
      *
@@ -78,12 +84,12 @@ class PaymentController extends Controller
                 'transactionReference' => $request->input('paymentId'),
             ));
             $response = $transaction->send();
-           
+
             if ($response->isSuccessful())
             {
                 // The customer has successfully paid.
                 $arr_body = $response->getData();
-           
+
                 // Insert transaction data into the database
                 $payment = new Payment;
                 $payment->payment_id = $arr_body['id'];
@@ -105,7 +111,7 @@ class PaymentController extends Controller
             return redirect(route('payment'));
         }
     }
-   
+
     /**
      * Error Handling.
      */

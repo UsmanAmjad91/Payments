@@ -14,8 +14,15 @@ use Stripe;
 
 class StripeController extends Controller
 {
+    public function __construct()
+    {
+        // set permission
+        $this->middleware('permission:stripe-post', ['only' => ['index','show','view','list']]);
+        $this->middleware('permission:stripe-post', ['only' => ['create','store']]);
+        $this->middleware('permission:stripe-post', ['only' => ['edit','update']]);
+        $this->middleware('permission:stripe-post', ['only' => ['destroy','delete']]);
+    }
 
-  
     public function stripePost(Request $request)
     {
     Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));

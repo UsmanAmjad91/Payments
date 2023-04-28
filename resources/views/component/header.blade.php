@@ -22,7 +22,7 @@
     }
             toastr.success("{{ session('success') }}");
     @endif
-  
+
     @if(Session::has('error'))
     toastr.options =
     {
@@ -31,7 +31,7 @@
     }
             toastr.error("{{ session('error') }}");
     @endif
-  
+
     @if(Session::has('info'))
     toastr.options =
     {
@@ -40,7 +40,7 @@
     }
             toastr.info("{{ session('info') }}");
     @endif
-  
+
     @if(Session::has('warning'))
     toastr.options =
     {
@@ -82,9 +82,11 @@ input[type="radio"] {
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        <a class="navbar-brand text-white" href="{{route('logout.user')}}">Logout</a>
+      <h5 class="navbar-brand text-white"><a class="navbar-brand text-white" href="{{route('users.edit',Auth::user()->id)}}">{{Auth::user()->name}}</a></h5>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
+
                 <li class="nav-item active pr-3">
                     <a class="nav-link text-white" href="{{route('payment')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -92,15 +94,24 @@ input[type="radio"] {
                     <a class="nav-link text-white" href="{{route('email.view')}}">Email</a>
                 </li>
                 <li class="nav-item pr-3">
+                    <a class="nav-link text-white" href="{{route('users.show')}}">Users</a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a class="nav-link text-white" href="{{route('role.show')}}">User Roles</a>
+                </li>
+                <li class="nav-item pr-3">
+                    <a class="nav-link text-white" href="{{route('permission.show')}}">User Permissions</a>
+                </li>
+                <li class="nav-item pr-3">
                     <a class="nav-link text-white" href="{{route('import.export')}}">Import Export</a>
                 </li>
                 <li class="nav-item pr-3">
                     <a class="nav-link text-white" href="#">Clearence Event</a>
                 </li>
-             
+
             </ul>
         </div>
 
-     
+
 
     </nav>

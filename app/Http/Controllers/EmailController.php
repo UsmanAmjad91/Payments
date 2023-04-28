@@ -13,11 +13,14 @@ use PDF;
 // use Mail;
 class EmailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        // set permission
+        $this->middleware('permission:email-view|email-send|email-tmp', ['only' => ['index','show','view','list']]);
+        $this->middleware('permission:email-view', ['only' => ['create','store']]);
+        $this->middleware('permission:email-send', ['only' => ['edit','update']]);
+        $this->middleware('permission:email-tmp', ['only' => ['destroy','delete']]);
+    }
 
      public function index(Request $request)
      {
@@ -27,7 +30,7 @@ class EmailController extends Controller
      }
 
     public function template($msg){
-        
+
         return view('emailtemplate',compact('msg'));
     }
 
@@ -53,11 +56,11 @@ class EmailController extends Controller
         $subject = $request->subject;
         // $msg = $request->message;
          $content=$request->message;
-       
-         
+
+
             Mail::send(array(),array(), function($message) use ($content,$email,$subject,$files)
             {
-               
+
 
                 $message->to($email)
                         ->subject($subject)
@@ -65,12 +68,12 @@ class EmailController extends Controller
                         ->text($content);
                      foreach ($files as $file){
                     $message->attach($file);
-                      }   
+                      }
             });
             toastr()->success('Mail Sent successful');
                 return redirect(route('email.view'));
     }
 
 
- 
+
 }
